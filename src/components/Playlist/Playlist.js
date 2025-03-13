@@ -1,11 +1,12 @@
 import React, {useCallback} from "react";
 
+import './Playlist.css'
 import TrackList from "../TrackList/TrackList";
 
 function Playlist(props){
     const handleNameChange = useCallback((e) => {
-        props.onNameChane(e.target.value);
-    },[props.onNameChane]);
+        props.onNameChange(e.target.value);
+    },[props.onNameChange]);
 
     return (
         <div className="Playlist">

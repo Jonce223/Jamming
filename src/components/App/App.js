@@ -20,7 +20,9 @@ function App() {
   //The addTrack function add a track to the playlist if it isn't already thre
   const addTrack = useCallback((track) =>{
     //the function checks if the track is already in the playlistTracks array by checking id of the track against saved tracks
-    if(playlistTracks.some((savedTrack) => savedTrack === track.id)) return;
+    if(playlistTracks.some((savedTrack) => savedTrack.id === track.id))
+      return;
+
     //If the track is not already in the playlist, it updates the playlistTracks state by adding new track to the existing list(prevTracks).
     setPlaylistTracks((prevTracks) => [...prevTracks, track]);
   
@@ -55,7 +57,7 @@ function App() {
 
   return(
     <div>
-      <h1>Jamming</h1>
+      <h1>SSS - Spotify Song Search</h1>
       <div className='App'>
         <SearchBar onSearch={search}/>
         <div className='App-playlist'>

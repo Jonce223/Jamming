@@ -1,5 +1,5 @@
 const clientId= 'fb9905607bdb494db10434807b808236'; //Our clientId
-const redirectUri= 'https://localhost:3000'; //Where API should redirect
+const redirectUri= 'http://localhost:3000/'; //Where API should redirect
 let accessToken; //created a variable for the access token
 // Created a Spotify object, with its methods
 const Spotify = {
@@ -64,13 +64,13 @@ const Spotify = {
         -Otherwise, it maps over the tracks in the response and extracts details like:
         id, name, artist, album, and uri*/
         .then(jsonRespone =>{
-            if(!jsonRespone){
+            if(!jsonRespone.tracks){
                 return [];
             }
             return jsonRespone.tracks.items.map(track => ({
                 id: track.id,
                 name: track.name,
-                artist: track.artist[0].name,
+                artist: track.artists[0].name,
                 album: track.album.name,
                 uri: track.uri
             }));

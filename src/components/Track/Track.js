@@ -1,4 +1,6 @@
-import React, {useCallback} from "react";
+import React, { useCallback } from "react";
+
+import './Track.css';
 //useCallback is used here to memoize the addTrack and removeTrack functions
 //An object containing information about a song
 function Track(props) {
@@ -27,7 +29,7 @@ function Track(props) {
         }
         //otherwise it renders button with + that will call the addTrack function
         return (
-            <button className="Track-action" onclick={addTrack}>
+            <button className="Track-action" onClick={addTrack}>
                 +
             </button>
         );

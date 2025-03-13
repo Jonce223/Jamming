@@ -1,5 +1,6 @@
 import React from "react";
 
+import './TrackList.css';
 import Track from '../Track/Track';
 
 //Mapping through tracks by goig throug individual track and getting its information
@@ -14,7 +15,7 @@ function TrackList(props) {
                         onAdd={props.onAdd}
                         isRemoval={props.isRemoval}
                         onRemove={props.onRemove}/>
-                )
+                );
             })}
         </div>
     );
